@@ -3,192 +3,349 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大宗商品周度分析报告 | 2026年3月</title>
+    <title>AI漫剧制作核心SOP - 零基础小白版</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 40px 20px;
+            padding: 20px;
         }
-        .container { max-width: 900px; margin: 0 auto; }
-        h1 { 
-            color: #fff; 
-            text-align: center; 
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.2em;
             margin-bottom: 10px;
-            font-size: 2.5em;
         }
-        .subtitle { 
-            color: #888; 
-            text-align: center; 
-            margin-bottom: 40px;
+        .subtitle {
+            opacity: 0.9;
             font-size: 1.1em;
         }
-        .card {
-            background: rgba(255,255,255,0.05);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
+        .content {
+            padding: 40px;
         }
-        .card h2 { 
-            color: #fff; 
-            margin-bottom: 20px;
+        h2 {
+            color: #667eea;
             font-size: 1.5em;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
         }
-        .emoji { font-size: 1.5em; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { 
-            padding: 15px; 
-            text-align: left;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+        h2:first-of-type {
+            margin-top: 0;
         }
-        th { color: #888; font-weight: 500; }
-        td { color: #fff; }
-        .positive { color: #4ade80; }
-        .negative { color: #f87171; }
-        .price { font-size: 1.3em; font-weight: 600; }
-        .section { margin-top: 30px; }
-        .section h3 { 
-            color: #fff; 
-            margin-bottom: 15px;
+        h3 {
+            color: #764ba2;
             font-size: 1.2em;
+            margin: 20px 0 10px;
         }
-        .section p { 
-            color: #aaa; 
-            line-height: 1.8;
-            margin-bottom: 10px;
+        p {
+            margin-bottom: 15px;
         }
-        .footer {
+        ul, ol {
+            margin: 15px 0 15px 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .step {
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .step-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+        .tool-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .tool-table th, .tool-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .tool-table th {
+            background: #667eea;
+            color: white;
+        }
+        .tool-table tr:hover {
+            background: #f8f9ff;
+        }
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: "Courier New", monospace;
+            color: #e83e8c;
+        }
+        .prompt-box {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: "Courier New", monospace;
+            overflow-x: auto;
+        }
+        .prompt-box code {
+            background: none;
+            color: #f8f8f2;
+            padding: 0;
+        }
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
             text-align: center;
             color: #666;
-            margin-top: 40px;
-            padding: 20px;
+            font-size: 0.9em;
         }
         .tag {
             display: inline-block;
-            background: rgba(255,255,255,0.1);
-            padding: 5px 12px;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.85em;
-            color: #888;
             margin-right: 8px;
         }
-        .highlight {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px;
-            border-radius: 15px;
-            margin-top: 20px;
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .content {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.6em;
+            }
+            .tool-table {
+                font-size: 0.9em;
+            }
         }
-        .highlight h3 { color: #fff !important; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>📊 大宗商品周度分析</h1>
-        <p class="subtitle">2026年3月2日 - 3月8日 | 生成时间: 2026-03-01</p>
+        <header>
+            <h1>🎬 AI漫剧制作核心SOP</h1>
+            <p class="subtitle">零基础小白也能快速上手 | 5步出片</p>
+        </header>
         
-        <div class="card">
-            <h2><span class="emoji">🥇</span> 贵金属</h2>
-            <table>
-                <tr>
-                    <th>品种</th>
-                    <th>价格 (美元)</th>
-                    <th>52周区间</th>
-                    <th>状态</th>
-                </tr>
-                <tr>
-                    <td>黄金 (GC=F)</td>
-                    <td class="price">$5,247.9</td>
-                    <td>$4,039 - $5,482</td>
-                    <td class="positive">📈 强势</td>
-                </tr>
-                <tr>
-                    <td>白银 (SI=F)</td>
-                    <td class="price">$93.29</td>
-                    <td>$28 - $121</td>
-                    <td class="positive">📈 突破</td>
-                </tr>
-                <tr>
-                    <td>铂金 (PL=F)</td>
-                    <td class="price">$2,373.5</td>
-                    <td>$1,899 - $2,598</td>
-                    <td class="positive">📈 看多</td>
-                </tr>
-                <tr>
-                    <td>钯金 (PA=F)</td>
-                    <td class="price">$1,828.5</td>
-                    <td>$1,380 - $2,180</td>
-                    <td class="positive">📈 反弹</td>
-                </tr>
-            </table>
-        </div>
-        
-        <div class="card">
-            <h2><span class="emoji">🛢️</span> 能源</h2>
-            <table>
-                <tr>
-                    <th>品种</th>
-                    <th>价格 (美元)</th>
-                    <th>52周区间</th>
-                    <th>状态</th>
-                </tr>
-                <tr>
-                    <td>WTI原油 (CL=F)</td>
-                    <td class="price">$67.02</td>
-                    <td>$52 - $84</td>
-                    <td class="positive">📈 上涨趋势</td>
-                </tr>
-            </table>
-        </div>
-        
-        <div class="card">
-            <h2><span class="emoji">🔶</span> 工业金属</h2>
-            <table>
-                <tr>
-                    <th>品种</th>
-                    <th>价格 (美元)</th>
-                    <th>52周区间</th>
-                    <th>状态</th>
-                </tr>
-                <tr>
-                    <td>铜 (HG=F)</td>
-                    <td class="price">$6.06</td>
-                    <td>$5.46 - $6.52</td>
-                    <td style="color: #fbbf24;">➡️ 震荡</td>
-                </tr>
-            </table>
-        </div>
-        
-        <div class="card">
+        <div class="content">
             <div class="highlight">
-                <h3>🎯 下周走势预测</h3>
-                <p style="color: #fff; margin-top: 15px;">
-                    <strong>黄金：</strong> 预计 $5,200-5,400 区间震荡，避险需求支撑<br><br>
-                    <strong>白银：</strong> 强势突破，短期仍有上涨动能，关注 $100 阻力位<br><br>
-                    <strong>原油：</strong> OPEC+减产支撑，$65-70 区间运行<br><br>
-                    <strong>铜：</strong> 中国需求预期改善，震荡上行
-                </p>
+                <strong>📌 什么是AI漫剧？</strong><br>
+                用AI工具自动生成漫画风格视频，本质 = <strong>AI图片 + AI配音 + AI剪辑</strong>，全流程可自动化！
+            </div>
+
+            <h2>🛠️ 工具准备</h2>
+            <table class="tool-table">
+                <tr>
+                    <th>用途</th>
+                    <th>推荐工具</th>
+                    <th>官网</th>
+                </tr>
+                <tr>
+                    <td>一键生成（推荐）</td>
+                    <td><strong>Seko</strong></td>
+                    <td>seko.sensetime.com</td>
+                </tr>
+                <tr>
+                    <td>AI生图</td>
+                    <td>Leonardo.ai / Midjourney</td>
+                    <td>leonardo.ai</td>
+                </tr>
+                <tr>
+                    <td>AI视频</td>
+                    <td>Runway / Pika / 可灵</td>
+                    <td>runwayml.com</td>
+                </tr>
+                <tr>
+                    <td>AI配音</td>
+                    <td>ElevenLabs / 剪映</td>
+                    <td>elevenlabs.io</td>
+                </tr>
+                <tr>
+                    <td>剪辑</td>
+                    <td>CapCut剪映</td>
+                    <td>capcut.com</td>
+                </tr>
+            </table>
+
+            <h2>📋 核心制作流程（5步法）</h2>
+
+            <div class="step">
+                <span class="step-number">1</span>
+                <span class="step-title">写剧本 / 分镜</span>
+            </div>
+            
+            <p>把小说或故事改编成漫剧脚本，包含：场景描述、人物动作、台词</p>
+            
+            <h3>用DeepSeek辅助生成：</h3>
+            <div class="prompt-box">
+                <code>请帮我把以下小说片段改编成AI漫剧脚本，格式：场景序号 | 画面描述 | 人物台词</code>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <span class="step-title">生成AI图片</span>
+            </div>
+            
+            <p>根据分镜脚本，用AI生成漫画风格图片</p>
+            
+            <h3>Leonardo.ai 操作：</h3>
+            <ol>
+                <li>注册账号（每日免费150积分）</li>
+                <li>创建角色参考图（保持人物一致）</li>
+                <li>输入Prompt生成场景图</li>
+            </ol>
+            
+            <h3>常用Prompt模板：</h3>
+            <div class="prompt-box">
+                <code>[画面描述], anime style, manga, vibrant colors, detailed, 4k --ar 9:16 --s 750</code>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <span class="step-title">生成AI视频（可选）</span>
+            </div>
+            
+            <p>让静态图片变成动态视频，或直接用静态图+配音</p>
+            
+            <h3>三种做法：</h3>
+            <ul>
+                <li><strong>Runway</strong> - 上传图片，描述动作，生成4秒视频</li>
+                <li><strong>首尾帧</strong> - 提供首帧和尾帧，AI自动补中间动画</li>
+                <li><strong>静态图片</strong> - 只用图片+配音，更简单，每张图停留3-5秒</li>
+            </ul>
+
+            <div class="step">
+                <span class="step-number">4</span>
+                <span class="step-title">AI配音</span>
+            </div>
+            
+            <p>为每个场景配上台词声音</p>
+            
+            <h3>工具选择：</h3>
+            <ul>
+                <li><strong>ElevenLabs</strong> - 声音自然，每月1000字符免费</li>
+                <li><strong>剪映</strong> - 内置配音功能，免费无限量</li>
+            </ul>
+
+            <div class="step">
+                <span class="step-number">5</span>
+                <span class="step-title">剪辑合成</span>
+            </div>
+            
+            <p>用剪映把图片、配音、字幕合成完整视频</p>
+            
+            <h3>剪映操作步骤：</h3>
+            <ol>
+                <li>新建项目，比例9:16（竖屏）</li>
+                <li>导入所有图片，按顺序排列</li>
+                <li>导入配音，对齐到对应图片</li>
+                <li>调整每张图时长：3-5秒</li>
+                <li>添加字幕：Text → Auto Captions</li>
+                <li>添加背景音乐</li>
+                <li>导出MP4</li>
+            </ol>
+
+            <h2>⚡ 极简方案：一键生成</h2>
+            <div class="highlight">
+                <strong>用 Seko AI（推荐！）</strong><br>
+                商汤科技出品，专为AI漫剧设计，输入小说链接或剧本，一键生成完整漫剧视频。<br>
+                <br>
+                <strong>操作只需3步：</strong><br>
+                1. 输入故事主题/上传小说<br>
+                2. 选择画风（卡通/3D/日漫）<br>
+                3. 一键生成视频<br>
+                <br>
+                官网：<a href="https://seko.sensetime.com" target="_blank">seko.sensetime.com</a>
+            </div>
+
+            <h2>❓ 常见问题</h2>
+            
+            <div class="warning">
+                <strong>Q: 人物不一致怎么办？</strong><br>
+                A: 用同一套Prompt + Image to Image参考图，或用LoRA训练专属角色
+            </div>
+            
+            <div class="warning">
+                <strong>Q: 画面畸形/多手指怎么办？</strong><br>
+                A: 加入Negative Prompt: <code>deformed, bad anatomy, extra fingers</code>
+            </div>
+            
+            <div class="warning">
+                <strong>Q: 配音要钱吗？</strong><br>
+                A: 剪映免费无限量，ElevenLabs每月1000字符免费
+            </div>
+
+            <h2>📚 推荐学习资源</h2>
+            <ul>
+                <li>B站搜索：AI漫剧教程</li>
+                <li>Seko发现页：有很多优秀案例参考</li>
+                <li>小红书：搜索"AI漫剧制作"</li>
+            </ul>
+
+            <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px; text-align: center;">
+                <p><strong>🎉 祝创作愉快！</strong></p>
+                <p style="color: #666; font-size: 0.9em;">跟着SOP操作，30分钟就能出第一集！</p>
             </div>
         </div>
         
-        <div class="card">
-            <h2><span class="emoji">⚠️</span> 风险提示</h2>
-            <p>本报告仅供参考，不构成投资建议。投资有风险，入市需谨慎。</p>
-            <div style="margin-top: 15px;">
-                <span class="tag">数据来源: Yahoo Finance</span>
-                <span class="tag">分析工具: OpenFang</span>
-                <span class="tag">报告日期: 2026-03-01</span>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <p>Generated by OpenFang Researcher Hand</p>
-        </div>
+        <footer>
+            <p>AI漫剧SOP | 零基础小白版 | v1.0</p>
+            <p>🦞 小龙虾出品</p>
+        </footer>
     </div>
 </body>
 </html>
